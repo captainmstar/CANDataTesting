@@ -1,0 +1,10 @@
+This is test code to simulate the protobuf CAN data that will be sent via socket.
+main.py reads OneLapTest.csv to get the sample CAN data. This is from one real lap on IndiEV test track which is almost exact duplicate of NY Auto Show test track.
+The real CAN data code will be similar to this in that the same CAN messages will be sent as protobuf messages via socket. Both this application and VR game will reside on super computer.
+
+canmessage.proto contains the below variables
+    duration = time in seconds between last CAN message and current message, i.e. how long vehicle has been moving at this speed. Can messages are logged every 100ms
+    speed = current speed of vehicle in kph
+    acceleration = delta speed in kph/ delta time in hours
+
+ For my testing, I start server.py from terminal (python server.py) then run main.py
